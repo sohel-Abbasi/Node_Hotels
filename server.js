@@ -62,8 +62,8 @@
 const express = require("express");
 const app = express();
 const db = require("./db");
-
-
+require('dotenv').config()
+const PORT =process.env.PORT ||3000;
 
 
 app.get("/", function (req, res) {
@@ -102,7 +102,7 @@ const menuRoutes = require('./routes/menuRoutes');
 app.use('/person',personRoutes);
 app.use('/menu',menuRoutes);
 
-const PORT = 3000;
+
 app.listen(PORT, () => {
   console.log(`server is running on port ${3000}`);
 });
